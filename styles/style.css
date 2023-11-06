@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+/*** VARIABLES***/
+:root {
+    --color-primario: #3a5a40;
+    --color-secundario: #a3b18a;
+    --color-letras: #dad7cd;
+}
+
+/*** HEADER ***/
+
+*::selection {
+    background-color: black;
+    color: var(--color-letras);
+}
+
+header {
+    background-color: var(--color-primario);
+    color: var(--color-letras);
+    gap: 20px;
+    padding: 1.3rem;
+}
+
+.navbar-nav {
+    gap: 20px;
+}
+
+.nav-item a{
+    color: var(--color-letras);
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.nav-item a:hover {
+    background-color: var(--color-secundario);
+    color: black;
+    transition: .2s;
+}
+
+.navbar-brand {
+    color: var(--color-letras);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/*** INICIO ***/
+
+.hero {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+
+    "oli-bakery  quienes-somos  productos"
+    "oli-bakery  eventos        contacto";
+}
+
+.hero a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #344e41;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.caja-titulo {
+    grid-area: oli-bakery;
+    background-image: url("../img/logo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.caja-quienes-somos {
+    grid-area: quienes-somos;
+    background-color: #588157;
+}
+
+.caja-productos {
+    grid-area: productos;
+    background-color: var(--color-secundario);
+}
+
+.caja-eventos {
+    grid-area: eventos;
+    background-color: var(--color-secundario);
+}
+
+.caja-contacto {
+    grid-area: contacto;
+    background-color: #588157;
+}
+
+/*** PRODUCTOS ***/
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 2rem;
+    background-color: white;
+    padding: 3rem;
+}
+
+.container-categorias {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    background-color: var(--color-primario);
+    border-radius: 1.5rem;
+    list-style-type: none;
+    padding: 1rem;
+    margin: 1rem;
+    position: fixed;
+}
+
+.menu .titulo {
+    color: var(--color-secundario);
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding-bottom: 1.2rem;
+}
+
+.boton-menu{
+    background-color: transparent;
+    border: 0;
+    color: var(--color-letras);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.boton-menu.active {
+    background-color: white;
+    color: black;
+}
+
+.titulo-principal {
+    color: var(--color-primario);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.producto-imagen {
+    min-width: 100%;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+
+.producto-detalles {
+    background-color: #3a5a40;
+    color: white;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.producto-titulo {
+    font-size: 1.2rem;
+}
+
+
+.producto-agregar {
+    border-radius: 2rem;
+    border: 0;
+    border: 2px solid #a3b18a ;
+    background-color: #588157;
+    color: white;
+    cursor: pointer;
+    transition: backgraound-color .2s;
+}
+
+.producto-agregar:hover {
+    background-color: #dad7cd;
+    color: black;
+}
+
+
+/*** CARRITO ***/
+
+.contenedor-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1.5rem;
+}
+
+.carrito-vacio {
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrito-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.carrito-producto{
+    display: flex;
+    justify-content: space-between;
+    background-color: #3a5a40;
+    color: black;
+    padding: .5rem;
+    border-radius: 1rem;
+    align-items: center;
+    padding: 1rem;
+}
+
+.carrito-producto-imagen {
+    width: 10rem;
+    border-radius: 1rem;
+}
+
+.carrito-producto small {
+    font-size: .75rem;
+}
+
+.carrito-producto h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.carrito-producto-eliminar {
+    border: 0;
+    background-color: transparent;
+    color: black;
+}
+
+.carrito-acciones {
+    display: flex;
+    justify-content: space-between;
+}
+
+.carrito-acciones-vaciar {
+    border: 0;
+    background-color: var(--color-primario);
+    color: var(--color-letras);
+    padding: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.carrito-acciones-derecha {
+    display: flex;
+    flex-direction: column;
+}
+
+.carrito-acciones-total {
+    display: flex;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: black;
+    text-transform: uppercase;
+}
+
+.carrito-acciones-comprar {
+    border: 0;
+    background-color: var(--color-primario);
+    color: var(--color-letras);
+    padding: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+}
